@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.3 — 2026-10-05
+
+- Shorten the README's feature explanations and example while retaining requirements and cost caveats.
+- Collapse release-specific installation details and simplify the project footer.
+- Leave the skill's behavior unchanged.
+
 ## 0.1.2 — 2026-10-05
 
 - Organize the README around continued progress, workflow improvement and lightweight coordination.
