@@ -1,0 +1,11 @@
+{
+  "name": "@game-dev-rta-club/light-loop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal Goal-based loop engineering with focused turns and an improving workflow",
+  "type": "module",
+  "license": "MIT",
+  "repository": "github:game-dev-rta-club/light-loop",
+  "engines": { "node": ">=24" },
+  "scripts": { "test": "node --test" }
+}
