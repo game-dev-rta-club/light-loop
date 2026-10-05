@@ -3,40 +3,35 @@
   <desc id="desc">One agent focuses on a coherent purpose, does the work, and improves its next approach from the result. The feedback goes to the next turn. The Goal carries the outcome, principles and useful lessons.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M1 1L9 5L1 9" fill="none" stroke="#21867e" stroke-width="2" stroke-linejoin="round"/>
+      <path d="M1 1L9 5L1 9" fill="none" stroke="#2563eb" stroke-width="2"/>
     </marker>
   </defs>
-  <rect width="1400" height="460" rx="28" fill="#f7f5ee"/>
+  <rect width="1400" height="460" fill="#fff"/>
   <g font-family="Arial, Helvetica, sans-serif">
-    <rect x="60" y="34" width="1280" height="70" rx="16" fill="#153d3b"/>
-    <text x="90" y="79" font-size="26" font-weight="700" fill="#fff">GOAL</text>
-    <text x="208" y="79" font-size="25" fill="#d6ebe7">Outcome + loop principles + useful lessons</text>
-    <path d="M218 105V164M700 105V164M1182 105V164" stroke="#a7c5c0" stroke-width="2" stroke-dasharray="5 7"/>
-    <text x="62" y="147" font-size="17" font-weight="700" letter-spacing="2" fill="#56726d">ONE FOCUSED TURN</text>
-    <g fill="#fff" stroke="#d6e4df" stroke-width="2">
-      <rect x="60" y="172" width="355" height="156" rx="20"/>
-      <rect x="522" y="172" width="355" height="156" rx="20"/>
-      <rect x="984" y="172" width="355" height="156" rx="20"/>
+    <rect x="60" y="34" width="1280" height="70" fill="#fff" stroke="#171717" stroke-width="2"/>
+    <text x="90" y="79" font-size="26" font-weight="700" fill="#171717">GOAL</text>
+    <text x="208" y="79" font-size="24" fill="#64748b">Outcome + loop principles + useful lessons</text>
+    <path d="M218 105V164M700 105V164M1182 105V164" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="5 7"/>
+    <text x="62" y="147" font-size="17" fill="#64748b">ONE FOCUSED TURN</text>
+    <g fill="#fff" stroke="#171717" stroke-width="2">
+      <rect x="60" y="172" width="355" height="156"/>
+      <rect x="522" y="172" width="355" height="156"/>
+      <rect x="984" y="172" width="355" height="156"/>
     </g>
-    <g fill="#0b5450">
-      <circle cx="104" cy="220" r="19" fill="#e2f1ed"/>
-      <circle cx="566" cy="220" r="19" fill="#e2f1ed"/>
-      <circle cx="1028" cy="220" r="19" fill="#e2f1ed"/>
-      <text x="104" y="227" text-anchor="middle" font-size="19" font-weight="700">1</text>
-      <text x="566" y="227" text-anchor="middle" font-size="19" font-weight="700">2</text>
-      <text x="1028" y="227" text-anchor="middle" font-size="19" font-weight="700">3</text>
-      <text x="138" y="230" font-size="29" font-weight="700">Focus</text>
-      <text x="600" y="230" font-size="29" font-weight="700">Work</text>
-      <text x="1062" y="230" font-size="29" font-weight="700">Improve how</text>
+    <g fill="#171717" font-size="26" font-weight="700">
+      <text x="87" y="230">FOCUS</text>
+      <text x="549" y="230">WORK</text>
+      <text x="1011" y="230">IMPROVE HOW</text>
     </g>
-    <g fill="#536c66" font-size="23">
+    <g fill="#64748b" font-size="20">
       <text x="87" y="284">One coherent purpose</text>
       <text x="549" y="284">Progress + a clear result</text>
       <text x="1011" y="284">A better next approach</text>
     </g>
-    <path d="M431 250H502M894 250H965" fill="none" stroke="#21867e" stroke-width="3" marker-end="url(#arrow)"/>
-    <path d="M1162 329V380Q1162 402 1140 402H260Q238 402 238 380V340" fill="none" stroke="#21867e" stroke-width="3" marker-end="url(#arrow)"/>
-    <rect x="457" y="379" width="487" height="43" rx="21" fill="#e2f1ed"/>
-    <text x="700" y="407" text-anchor="middle" font-size="22" font-weight="700" fill="#0b5450">A better approach for the next turn</text>
+    <path d="M431 250H502" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M894 250H965" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M1162 340V402H238V340" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="457" y="379" width="487" height="43" fill="#fff"/>
+    <text x="700" y="407" text-anchor="middle" font-size="20" fill="#64748b">A better approach for the next turn</text>
   </g>
 </svg>

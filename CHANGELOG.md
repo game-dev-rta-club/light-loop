@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4 — 2026-10-05
+
+- Replace the illustrated hero with a plain SVG made from text, boxes and arrows.
+- Match the workflow diagram to the same monochrome style with blue arrows.
+- Leave the skill's behavior unchanged.
+
 ## 0.1.3 — 2026-10-05
 
 - Shorten the README's feature explanations and example while retaining requirements and cost caveats.

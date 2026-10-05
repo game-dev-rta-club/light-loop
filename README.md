@@ -4,7 +4,7 @@
 [![Release](https://img.shields.io/github/v/release/game-dev-rta-club/light-loop)](https://github.com/game-dev-rta-club/light-loop/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Light Loop: one agent learns as it works toward a goal along a lightweight loop.](assets/hero.png)
+![Light Loop: one agent, better every turn. Work and improving the approach form a simple loop.](assets/hero.svg)
 
 **Give Codex a goal. It keeps working—and improves its approach as it goes.**
 
@@ -54,7 +54,7 @@ Rerun the install command to update. Updates are explicit, not automatic. See th
 <summary>Install a specific release</summary>
 
 ```sh
-npx skills@latest add https://github.com/game-dev-rta-club/light-loop/tree/v0.1.3/skills/light-loop \
+npx skills@latest add https://github.com/game-dev-rta-club/light-loop/tree/v0.1.4/skills/light-loop \
   --agent codex --yes
 ```
 
