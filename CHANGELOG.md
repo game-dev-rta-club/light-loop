@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.2 — 2026-10-05
+
+- Organize the README around continued progress, workflow improvement and lightweight coordination.
+- Replace reader-directed questions and comparison tables with plain explanations and one concrete example.
+- Simplify navigation and project information without changing the skill's behavior.
+
 ## 0.1.1 — 2026-10-05
 
 - Explain the benefits for first-time loop users and the lighter coordination model for experienced users.
