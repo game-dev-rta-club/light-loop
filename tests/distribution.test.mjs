@@ -30,7 +30,7 @@ test('release metadata is consistent and no runtime is bundled', async () => {
   assert.ok(changelog.includes(`## ${manifest.version} —`));
 });
 
-test('all relative Markdown links resolve within the repository', async () => {
+test('all relative documentation links and HTML images resolve within the repository', async () => {
   async function visit(directory) {
     for (const entry of await readdir(directory, { withFileTypes: true })) {
       if (entry.name.startsWith('.') || entry.name === 'node_modules') continue;
@@ -38,7 +38,11 @@ test('all relative Markdown links resolve within the repository', async () => {
       if (entry.isDirectory()) { await visit(file); continue; }
       if (!entry.name.endsWith('.md')) continue;
       const text = await readFile(file, 'utf8');
-      for (const match of text.matchAll(/\[[^\]]*\]\(([^\s)]+)\)/g)) {
+      const links = [
+        ...text.matchAll(/\[[^\]]*\]\(([^\s)]+)\)/g),
+        ...text.matchAll(/<img\b[^>]*\bsrc="([^"]+)"/g),
+      ];
+      for (const match of links) {
         const target = match[1];
         if (/^[a-z][a-z\d+.-]*:|^#/i.test(target)) continue;
         const linkedFile = resolve(dirname(file), decodeURIComponent(target.split('#')[0]));

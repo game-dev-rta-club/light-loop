@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.5 — 2026-10-05
+
+- Replace the large hero banner with a small original loop monogram and a centered README header.
+- Restore the workflow diagram's warm background, teal colors and rounded cards.
+- Check HTML image paths as well as Markdown links. Leave the skill's behavior unchanged.
+
 ## 0.1.4 — 2026-10-05
 
 - Replace the illustrated hero with a plain SVG made from text, boxes and arrows.

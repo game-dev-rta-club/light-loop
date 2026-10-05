@@ -1,10 +1,16 @@
-# Light Loop
+<p align="center">
+  <img src="assets/logo.svg" width="112" height="112" alt="Light Loop logo: an L-shaped line loops back toward its starting point.">
+</p>
+
+<h1 align="center">Light Loop</h1>
+
+<div align="center">
 
 [![CI](https://github.com/game-dev-rta-club/light-loop/actions/workflows/ci.yml/badge.svg)](https://github.com/game-dev-rta-club/light-loop/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/v/release/game-dev-rta-club/light-loop)](https://github.com/game-dev-rta-club/light-loop/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-![Light Loop: one agent, better every turn. Work and improving the approach form a simple loop.](assets/hero.svg)
+</div>
 
 **Give Codex a goal. It keeps working—and improves its approach as it goes.**
 
@@ -54,7 +60,7 @@ Rerun the install command to update. Updates are explicit, not automatic. See th
 <summary>Install a specific release</summary>
 
 ```sh
-npx skills@latest add https://github.com/game-dev-rta-club/light-loop/tree/v0.1.4/skills/light-loop \
+npx skills@latest add https://github.com/game-dev-rta-club/light-loop/tree/v0.1.5/skills/light-loop \
   --agent codex --yes
 ```
 

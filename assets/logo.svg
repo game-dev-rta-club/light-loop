@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" role="img" aria-labelledby="title desc">
+  <title id="title">Light Loop</title>
+  <desc id="desc">An L-shaped line loops back toward its starting point. A small amber dot marks the start.</desc>
+  <path d="M40 28V76Q40 88 52 88H82Q106 88 106 64V52Q106 28 82 28H65" fill="none" stroke="#21867e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M70 17L55 28L70 39" fill="none" stroke="#21867e" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="40" cy="28" r="6" fill="#efb44b"/>
+</svg>
