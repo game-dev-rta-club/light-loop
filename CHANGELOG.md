@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+- Do not start working until the goal is active; agreeing on the goal file does not start it.
+- In Claude Code without `ProposeGoal`, ask for one thing at a time and show only the `/goal` line. Start turn 1 only in the turn that `/goal` starts, and show the line again if the user replies without running it.
+
 ## 0.2.0 — 2026-10-10
 
 - Support Claude Code's `/goal` as well as Codex's Goal. The main steps no longer name tools; agent-specific tips at the end say what to call at each step.

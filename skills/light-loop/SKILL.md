@@ -48,6 +48,8 @@ Light Loop. At the start of every turn, read <goal file> and follow its completi
 
 Do not change this directive later. To steer the work, edit the goal file. The agent re-reads the directive every turn, so the goal file is read every turn even in long runs.
 
+Do not start working until the goal is active. Agreeing on the goal file does not start the goal.
+
 If the agent has no goal feature, report the limitation instead of imitating one.
 
 ## 4. Work each turn
@@ -76,7 +78,8 @@ If the same blocker repeats for several turns, report what remains and stop as t
 
 ### Claude Code
 
-- Start the goal: propose the directive with `ProposeGoal`; the user approves it with one keypress. Without that tool, ask the user to run `/goal <directive>`.
+- Start the goal: propose the directive with `ProposeGoal`; the user approves it with one keypress. Without that tool, ask for one thing at a time: first agree on the goal file, then show only the `/goal <directive>` line and ask the user to run it.
+- Running `/goal` starts turn 1 by itself, and the conversation then says a session-scoped Stop hook is now active. Start turn 1 only in that turn. If the user replies without running it, show the line again instead of starting work.
 - Complete it: a separate evaluator reads the conversation after each turn and clears the goal when it is met. It cannot read files, so the report must show the criteria and their evidence. You cannot mark the goal complete or clear it yourself.
 - Stop when blocked: the evaluator clears the goal when it judges it impossible. The user can run `/goal clear`.
 - The user can run `/goal` to see turns, elapsed time, token spend and the evaluator's last reason.
