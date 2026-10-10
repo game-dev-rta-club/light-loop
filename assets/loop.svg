@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="460" viewBox="0 0 1400 460" role="img" aria-labelledby="title desc">
   <title id="title">A loop that improves its own workflow</title>
-  <desc id="desc">One agent focuses on a coherent purpose, does the work, and improves its next approach from the result. The feedback goes to the next turn. The Goal carries the outcome, principles and useful lessons.</desc>
+  <desc id="desc">One agent focuses on a coherent purpose, does the work, and improves its next approach from the result. The feedback goes to the next turn. A goal file, read every turn, carries the completion criteria, principles and useful lessons.</desc>
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
       <path d="M1 1L9 5L1 9" fill="none" stroke="#21867e" stroke-width="2" stroke-linejoin="round"/>
@@ -9,8 +9,8 @@
   <rect width="1400" height="460" rx="28" fill="#f7f5ee"/>
   <g font-family="Arial, Helvetica, sans-serif">
     <rect x="60" y="34" width="1280" height="70" rx="16" fill="#153d3b"/>
-    <text x="90" y="79" font-size="26" font-weight="700" fill="#fff">GOAL</text>
-    <text x="208" y="79" font-size="25" fill="#d6ebe7">Outcome + loop principles + useful lessons</text>
+    <text x="90" y="79" font-size="26" font-weight="700" fill="#fff">GOAL FILE</text>
+    <text x="268" y="79" font-size="25" fill="#d6ebe7">Criteria + loop principles + useful lessons, read every turn</text>
     <path d="M218 105V164M700 105V164M1182 105V164" stroke="#a7c5c0" stroke-width="2" stroke-dasharray="5 7"/>
     <text x="62" y="147" font-size="17" font-weight="700" letter-spacing="2" fill="#56726d">ONE FOCUSED TURN</text>
     <g fill="#fff" stroke="#d6e4df" stroke-width="2">

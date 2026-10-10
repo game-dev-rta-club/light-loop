@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.0 — 2026-10-10
+
+- Support Claude Code's `/goal` as well as Codex's Goal. The main steps no longer name tools; agent-specific tips at the end say what to call at each step.
+- Keep the goal text fixed and put completion criteria, principles, decisions and lessons in a goal file that the agent reads at the start of every turn. Steer the run by editing the file instead of rewriting the goal.
+- Show the completion criteria and their evidence in each turn's report, so an evaluator that only reads the conversation can judge completion.
+- Change completion criteria only with the user's agreement and log every change in the goal file.
+
 ## 0.1.5 — 2026-10-05
 
 - Replace the large hero banner with a small original loop monogram and a centered README header.

@@ -1,6 +1,6 @@
 {
   "name": "@game-dev-rta-club/light-loop",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "private": true,
   "description": "Minimal Goal-based loop engineering with focused turns and an improving workflow",
   "type": "module",
