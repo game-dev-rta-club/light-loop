@@ -6,10 +6,17 @@ Open an issue first for changes to the loop principles or Goal compatibility. Fo
 
 ## Development
 
-Edit `skills/light-loop/SKILL.md` directly. It is the source of truth and the complete distributable skill. Use Node.js 24+ to run the repository checks:
+Edit `skills/light-loop/` directly. `SKILL.md` is the source of truth for the method. The Claude Code plugin beside it (`.claude-plugin/`, `hooks/`, `types/`) only gives Claude Code Codex-style goal tools; keep it to that. Use Node.js 24+ to run the repository checks:
 
 ```sh
 npm test
+```
+
+Check the plugin with Claude Code itself:
+
+```sh
+claude plugin validate skills/light-loop
+claude plugin test skills/light-loop
 ```
 
 No dependency installation or build is needed. CI checks the skill's packaging and local documentation links on macOS, Windows and Linux; it does not simulate Codex Goal execution.

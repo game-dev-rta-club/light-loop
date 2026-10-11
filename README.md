@@ -52,9 +52,9 @@ $light-loop Fix the search bottleneck and get the existing performance tests
 passing without changing search results.
 ```
 
-In Claude Code, start with `/light-loop` instead of `$light-loop`. Claude Code then asks you to approve the goal, or to run the `/goal` command it prepares.
+In Claude Code, start with `/light-loop` instead of `$light-loop`. The skill includes a small Claude Code plugin that gives the loop Codex-style goal tools, so the loop starts without typing `/goal`. It loads in trusted projects from the next session after installing; without it, Claude Code asks you to approve the goal or to run the `/goal` command it prepares. Stop the loop with `/light-loop-stop`.
 
-**Requires:** Codex with native Goal tools, or Claude Code with `/goal`, plus Node.js, npm and Git for installation. The skill is [one Markdown file](skills/light-loop/SKILL.md), installed project-locally. Refresh the agent's skill list to use it.
+**Requires:** Codex with native Goal tools, or Claude Code with `/goal`, plus Node.js, npm and Git for installation. The skill is [one Markdown file](skills/light-loop/SKILL.md) with a [Claude Code plugin](skills/light-loop/hooks/register.ts) beside it, installed project-locally. Refresh the agent's skill list to use it.
 
 ## Update
 

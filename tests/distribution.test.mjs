@@ -9,7 +9,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 test('the distributable is one self-contained, portable skill', async () => {
   assert.deepEqual(await readdir(resolve(root, 'skills')), ['light-loop']);
   const directory = resolve(root, 'skills/light-loop');
-  assert.deepEqual(await readdir(directory), ['SKILL.md']);
+  assert.deepEqual((await readdir(directory)).sort(), ['.claude-plugin', 'SKILL.md', 'hooks', 'types']);
   const text = await readFile(resolve(directory, 'SKILL.md'), 'utf8');
   const header = text.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n/);
   assert.ok(header, 'skill needs YAML frontmatter');
@@ -17,6 +17,24 @@ test('the distributable is one self-contained, portable skill', async () => {
   assert.match(header[1], /^description: .+$/m);
   assert.match(header[1], /^license: MIT$/m);
   assert.doesNotMatch(text, /\/Users\/|current-project-knowledge|SuperHookGirl/);
+});
+
+test('the Claude Code plugin beside the skill is complete and portable', async () => {
+  const directory = resolve(root, 'skills/light-loop');
+  const plugin = JSON.parse(await readFile(resolve(directory, '.claude-plugin/plugin.json'), 'utf8'));
+  const manifest = JSON.parse(await readFile(resolve(root, 'package.json'), 'utf8'));
+  assert.equal(plugin.name, 'light-loop');
+  assert.equal(plugin.version, manifest.version);
+  assert.ok((await stat(resolve(directory, plugin.types))).isFile());
+  const hooks = JSON.parse(await readFile(resolve(directory, 'hooks/hooks.json'), 'utf8'));
+  assert.ok(hooks.modules.length > 0);
+  for (const module of hooks.modules) {
+    const text = await readFile(resolve(directory, 'hooks', module), 'utf8');
+    assert.doesNotMatch(text, /\/Users\/|current-project-knowledge|SuperHookGirl/);
+    for (const tool of ['start', 'status', 'end']) assert.ok(text.includes(`mcp__light-loop__${tool}`));
+  }
+  const skill = await readFile(resolve(directory, 'SKILL.md'), 'utf8');
+  for (const tool of ['start', 'status', 'end']) assert.ok(skill.includes(`mcp__light-loop__${tool}`));
 });
 
 test('release metadata is consistent and no runtime is bundled', async () => {

@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- Add a Claude Code plugin inside the skill folder with Codex-style goal tools: `mcp__light-loop__start`, `mcp__light-loop__status` and `mcp__light-loop__end`. While a loop is active, each turn's end continues the session with the fixed directive, so the loop starts without typing `/goal`. The loop stops when ended as complete or blocked, when the user interrupts a turn or runs `/light-loop-stop`, or after 100 turns. Without the plugin, Claude Code still uses `/goal`.
 - Do not start working until the goal is active; agreeing on the goal file does not start it.
 - In Claude Code without `ProposeGoal`, ask for one thing at a time and show only the `/goal` line. Start turn 1 only in the turn that `/goal` starts, and show the line again if the user replies without running it.
 

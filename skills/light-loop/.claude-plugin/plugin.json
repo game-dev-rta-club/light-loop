@@ -1,0 +1,9 @@
+{
+  "name": "light-loop",
+  "version": "0.2.0",
+  "description": "Goal tools for Light Loop in Claude Code: start, check and end a loop that continues across turns.",
+  "types": "./types/index.d.ts",
+  "author": {
+    "name": "Game Dev RTA Club"
+  }
+}

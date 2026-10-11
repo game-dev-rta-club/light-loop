@@ -78,6 +78,20 @@ If the same blocker repeats for several turns, report what remains and stop as t
 
 ### Claude Code
 
+This skill folder also holds a Claude Code plugin. In a trusted project where the skill is installed under `.claude/skills/light-loop`, it adds Codex-style goal tools named `mcp__light-loop__start`, `mcp__light-loop__status` and `mcp__light-loop__end`. They are Light Loop's own, not Claude Code's `/goal`.
+
+With the Light Loop tools:
+
+- Start the goal: call `mcp__light-loop__start` with the directive as `objective`. The user asked for a Light Loop, so no further approval is needed. The loop is active when the call returns; start turn 1 in that same turn.
+- Each time a turn ends, the plugin continues the session with the directive. Check the loop with `mcp__light-loop__status`.
+- Complete it: after the report shows evidence for every criterion, call `mcp__light-loop__end` with `complete` and that evidence as `reason`.
+- Stop when blocked: after the same blocker recurs for three consecutive turns, call `mcp__light-loop__end` with `blocked`.
+- The loop also stops when the user interrupts a turn, runs `/light-loop-stop`, or it reaches 100 turns. Its turn shows in the status line.
+- Do not run `/goal` alongside it.
+- If the tools are missing right after installing or updating the skill, the plugin loads from the next session; the project must be trusted.
+
+Without the Light Loop tools, use `/goal`:
+
 - Start the goal: propose the directive with `ProposeGoal`; the user approves it with one keypress. Without that tool, ask for one thing at a time: first agree on the goal file, then show only the `/goal <directive>` line and ask the user to run it.
 - Running `/goal` starts turn 1 by itself, and the conversation then says a session-scoped Stop hook is now active. Start turn 1 only in that turn. If the user replies without running it, show the line again instead of starting work.
 - Complete it: a separate evaluator reads the conversation after each turn and clears the goal when it is met. It cannot read files, so the report must show the criteria and their evidence. You cannot mark the goal complete or clear it yourself.
