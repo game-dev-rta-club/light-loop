@@ -6,7 +6,7 @@ license: MIT
 
 # Light Loop
 
-Achieve the user's goal while improving how you work toward it. The agent's goal feature keeps the work going across focused turns. A goal file holds everything that should evolve during the run, so the goal itself never needs rewriting.
+Achieve the user's goal while improving how you work toward it. A goal feature keeps the work going across focused turns: Codex's goal tools, or in Claude Code the Light Loop tools that ship with this skill. A goal file holds everything that should evolve during the run, so the goal itself never needs rewriting.
 
 ## 1. Agree on the goal
 
@@ -40,7 +40,7 @@ Change these only with the user's agreement, and log every change below.
 
 ## 3. Start the goal
 
-Register the goal with the agent's goal feature, using this directive as the goal text:
+Start the goal with the goal feature, using this directive as the goal text:
 
 ```text
 Light Loop. At the start of every turn, read <goal file> and follow its completion criteria and principles. At the end of every turn, record new decisions and lessons in it. The goal is complete when every completion criterion in <goal file> is met and the turn's report shows the evidence for each.
@@ -50,7 +50,7 @@ Do not change this directive later. To steer the work, edit the goal file. The a
 
 Do not start working until the goal is active. Agreeing on the goal file does not start the goal.
 
-If the agent has no goal feature, report the limitation instead of imitating one.
+If the goal feature is unavailable, report the limitation instead of imitating one.
 
 ## 4. Work each turn
 
@@ -65,35 +65,20 @@ If the completion criteria seem wrong or out of reach, ask the user. Do not weak
 
 The goal is achieved when the report shows evidence that every completion criterion is met.
 
-If the same blocker repeats for several turns, report what remains and stop as the agent's goal feature allows. Do not declare completion just because you are stopping.
+If the same blocker repeats for three consecutive turns, report what remains and end the goal as blocked. Do not declare completion just because you are stopping.
 
-## Agent-specific tips
+## Goal feature by agent
 
-### Codex
+| Step | Codex | Claude Code |
+|---|---|---|
+| Start | `create_goal` with the directive | `mcp__light-loop__start` with the directive as `objective` |
+| Check | `get_goal` | `mcp__light-loop__status` |
+| Complete | `update_goal` with `complete` | `mcp__light-loop__end` with `complete` and the evidence as `reason` |
+| Blocked | `update_goal` with `blocked` | `mcp__light-loop__end` with `blocked` and the blocker as `reason` |
 
-- Start the goal: `create_goal` with the directive. The user can also run `/goal <directive>`. Check it with `get_goal`.
-- Complete it: after checking every criterion, call `update_goal` with `complete`.
-- Stop when blocked: after the same blocker recurs for three consecutive turns, call `update_goal` with `blocked`.
-- Codex cannot rewrite an active goal's text, which is why everything that changes lives in the goal file.
+The user asked for a Light Loop, so start the goal without asking again, and start turn 1 in the same turn once the call returns. Neither agent can rewrite an active goal's text, which is why everything that changes lives in the goal file.
 
 ### Claude Code
 
-This skill folder also holds a Claude Code plugin. In a trusted project where the skill is installed under `.claude/skills/light-loop`, it adds Codex-style goal tools named `mcp__light-loop__start`, `mcp__light-loop__status` and `mcp__light-loop__end`. They are Light Loop's own, not Claude Code's `/goal`.
-
-With the Light Loop tools:
-
-- Start the goal: call `mcp__light-loop__start` with the directive as `objective`. The user asked for a Light Loop, so no further approval is needed. The loop is active when the call returns; start turn 1 in that same turn.
-- Each time a turn ends, the plugin continues the session with the directive. Check the loop with `mcp__light-loop__status`.
-- Complete it: after the report shows evidence for every criterion, call `mcp__light-loop__end` with `complete` and that evidence as `reason`.
-- Stop when blocked: after the same blocker recurs for three consecutive turns, call `mcp__light-loop__end` with `blocked`.
-- The loop also stops when the user interrupts a turn, runs `/light-loop-stop`, or it reaches 100 turns. Its turn shows in the status line.
-- Do not run `/goal` alongside it.
-- If the tools are missing right after installing or updating the skill, the plugin loads from the next session; the project must be trusted.
-
-Without the Light Loop tools, use `/goal`:
-
-- Start the goal: propose the directive with `ProposeGoal`; the user approves it with one keypress. Without that tool, ask for one thing at a time: first agree on the goal file, then show only the `/goal <directive>` line and ask the user to run it.
-- Running `/goal` starts turn 1 by itself, and the conversation then says a session-scoped Stop hook is now active. Start turn 1 only in that turn. If the user replies without running it, show the line again instead of starting work.
-- Complete it: a separate evaluator reads the conversation after each turn and clears the goal when it is met. It cannot read files, so the report must show the criteria and their evidence. You cannot mark the goal complete or clear it yourself.
-- Stop when blocked: the evaluator clears the goal when it judges it impossible. The user can run `/goal clear`.
-- The user can run `/goal` to see turns, elapsed time, token spend and the evaluator's last reason.
+- The Light Loop tools come from a plugin in this skill folder. It loads in a trusted project where the skill is installed under `.claude/skills/light-loop`, from the session after installing or updating it. If the tools are missing, tell the user to trust the project and open a new session; do not use `/goal` instead.
+- While the loop is active, each turn's end continues the session with the directive. The loop also stops when the user interrupts a turn, runs `/light-loop-stop`, or after 100 turns. The status line shows the turn.

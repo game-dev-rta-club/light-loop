@@ -18,7 +18,7 @@ A skill for lightweight loop engineering with Codex or Claude Code: one agent, f
 
 ## Make progress beyond a single reply
 
-Describe the outcome. The agent's native goal feature (Codex **Goal** or Claude Code **`/goal`**) continues the work across focused cycles called turns, with one clear purpose per turn. The loop ends when the agreed goal is achieved.
+Describe the outcome. A goal feature (Codex **Goal**, or the **Light Loop tools** this skill adds to Claude Code) continues the work across focused cycles called turns, with one clear purpose per turn. The loop ends when the agreed goal is achieved.
 
 ![One focused turn moves through focus, work and improving the approach. Results feed the next turn, while a goal file read every turn retains the criteria, principles and useful lessons.](assets/loop.svg)
 
@@ -52,9 +52,9 @@ $light-loop Fix the search bottleneck and get the existing performance tests
 passing without changing search results.
 ```
 
-In Claude Code, start with `/light-loop` instead of `$light-loop`. The skill includes a small Claude Code plugin that gives the loop Codex-style goal tools, so the loop starts without typing `/goal`. It loads in trusted projects from the next session after installing; without it, Claude Code asks you to approve the goal or to run the `/goal` command it prepares. Stop the loop with `/light-loop-stop`.
+In Claude Code, start with `/light-loop` instead of `$light-loop`. The skill includes a small Claude Code plugin that gives the loop Codex-style goal tools, so the agent starts and ends the loop itself. The plugin loads in trusted projects from the next session after installing. Stop the loop with `/light-loop-stop`.
 
-**Requires:** Codex with native Goal tools, or Claude Code with `/goal`, plus Node.js, npm and Git for installation. The skill is [one Markdown file](skills/light-loop/SKILL.md) with a [Claude Code plugin](skills/light-loop/hooks/register.ts) beside it, installed project-locally. Refresh the agent's skill list to use it.
+**Requires:** Codex with native Goal tools, or Claude Code with plugin support (Mods), plus Node.js, npm and Git for installation. The skill is [one Markdown file](skills/light-loop/SKILL.md) with a [Claude Code plugin](skills/light-loop/hooks/register.ts) beside it, installed project-locally. Refresh the agent's skill list to use it.
 
 ## Update
 
