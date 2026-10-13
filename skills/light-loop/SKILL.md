@@ -43,8 +43,10 @@ Change these only with the user's agreement, and log every change below.
 Start the goal with the goal feature, using this directive as the goal text:
 
 ```text
-Light Loop. At the start of every turn, read <goal file> and follow its completion criteria and principles. At the end of every turn, record new decisions and lessons in it. The goal is complete when every completion criterion in <goal file> is met and the turn's report shows the evidence for each.
+Light Loop. At the start of every turn, read <goal file> and follow its completion criteria and principles. At the end of every turn, record new decisions and lessons in it. The goal is complete when every completion criterion in <goal file> is met and the turn's report shows the evidence for each. <reply-language sentence>
 ```
+
+Replace `<reply-language sentence>` with one sentence, written in the language the user is using, saying that reports and replies to the user use that language. For a Japanese-speaking user, for example: 「ユーザーへの報告・返信は日本語で行う。」 The directive is repeated every turn, so this keeps the reports in the user's language while the rest of the directive stays in English.
 
 Do not change this directive later. To steer the work, edit the goal file. The agent re-reads the directive every turn, so the goal file is read every turn even in long runs.
 

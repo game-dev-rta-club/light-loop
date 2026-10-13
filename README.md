@@ -64,7 +64,7 @@ Rerun the install command to update. Updates are explicit, not automatic. See th
 <summary>Install a specific release</summary>
 
 ```sh
-npx skills@latest add https://github.com/game-dev-rta-club/light-loop/tree/v0.2.0/skills/light-loop \
+npx skills@latest add https://github.com/game-dev-rta-club/light-loop/tree/v0.3.0/skills/light-loop \
   --agent codex claude-code --yes
 ```
 

@@ -1,7 +1,8 @@
 # Changelog
 
-## Unreleased
+## 0.3.0 — 2026-10-13
 
+- End the fixed directive with one sentence in the user's language saying that reports and replies use that language. Long loops previously drifted into English because the directive repeated every turn was English.
 - Add a Claude Code plugin inside the skill folder with Codex-style goal tools: `mcp__light-loop__start`, `mcp__light-loop__status` and `mcp__light-loop__end`. While a loop is active, each turn's end continues the session with the fixed directive, so the loop starts without typing `/goal`. The loop stops when ended as complete or blocked, when the user interrupts a turn or runs `/light-loop-stop`, or after 100 turns. Claude Code no longer uses `/goal`; the skill now describes both agents' goal tools in one table.
 - Do not start working until the goal is active; agreeing on the goal file does not start it.
 
